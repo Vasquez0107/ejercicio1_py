@@ -1,0 +1,18 @@
+# 
+
+entrada = input("Ingrese un número (entero o flotante) o un carácter: ")
+
+
+if entrada.isdigit() or (entrada[0] == '-' and entrada[1:].isdigit()):
+    num_entero = int(entrada)
+    kelvin = num_entero + 273.15
+    print(f"{num_entero} grados Celsius son {kelvin:.2f} Kelvin.")
+elif entrada.count('.') == 1 and (entrada.replace('.', '').isdigit() or 
+    (entrada[0] == '-' and entrada[1:].replace('.', '').isdigit())):
+    num_flotante = float(entrada)
+    if num_flotante > 10.5:
+        print("El número ingresado es mayor a 10.5.")
+    else:
+        print("El número ingresado no es mayor a 10.5.")
+else:
+    print("El carácter ingresado es: .", entrada)

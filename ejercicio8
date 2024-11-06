@@ -1,0 +1,31 @@
+#Dados tres números enteros únicos, a, b y c. Elabore un algoritmo que los ordene de mayor a menor e imprímalos
+
+a = int(input("Digite el primer número: "))
+b = int(input("Digite el segundo número: "))
+c = int(input("Digite el tercer número: "))
+
+if a > b and a > c:
+    mayor = a
+    if b > c:
+        medio = b
+        menor = c
+    else:
+        medio = c
+        menor = b
+elif b > a and b > c:
+    mayor = b
+    if a > c:
+        medio = a
+        menor = c
+    else:
+        medio = c
+        menor = a
+else:
+    mayor = c
+    if a > b:
+        medio = a
+        menor = b
+    else:
+        medio = b
+        menor = a
+print("Ordenados de mayor a menor:", mayor, medio, menor)

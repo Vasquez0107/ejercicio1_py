@@ -1,0 +1,11 @@
+#Desarrollar un algoritmo que evalué la siguiente expresión aritmética 1/n
+n = float(input("Digite el valor de n: "))
+
+if n == 0:
+    print("Error: No se puede dividir entre cero.")
+elif n > 0:
+    resultado = 1 / n
+    print("El resultado de 1/n es:", resultado)
+else: 
+    resultado = 1 / n
+    print("El resultado de 1/n es:", resultado)

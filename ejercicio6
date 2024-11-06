@@ -1,0 +1,14 @@
+#Desarrolle un algoritmo que lea de un registro: el nombre, la edad, el sexo, el estado civil de cualquier persona e imprima el nombre de la persona, si corresponde a un hombre casado mayor de 40 años o a una mujer soltera menor de 50 años
+
+
+nombre = input("Ingrese el nombre: ")
+edad = int(input("Ingrese la edad: "))
+sexo = input("Ingrese el sexo (H/M): ")
+estado_civil = input("Ingrese el estado civil (Casado/Soltero): ")
+
+if (sexo == "H" and estado_civil == "Casado" and edad > 40) or \
+    (sexo == "M" and estado_civil == "Soltero" and edad < 50):
+    print("Nombre: ", nombre)
+    print("sexo: ", sexo)
+    print("estado_civil: ", estado_civil)
+    print("edad: ", edad)

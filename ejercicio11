@@ -1,0 +1,15 @@
+#desarrollar un algoritmo que halle la nota total de una materia en el SENA, y determine si la gano o la reprobó
+
+nota1 = float(input("Digite la primera nota: "))
+nota2 = float(input("Digite la segunda nota: "))
+nota3 = float(input("Digite la tercera nota: "))
+
+nota_total = (nota1 + nota2 + nota3) / 3
+
+
+if nota_total >= 3.5:
+    print("La nota total es:", nota_total)
+    print("El estudiante ha ganado la materia.")
+elif nota_total <= 3.4:
+    print("La nota total es:", nota_total)
+    print("El estudiante ha reprobado la materia.")

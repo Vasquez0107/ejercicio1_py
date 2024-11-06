@@ -1,0 +1,7 @@
+#Desarrolle un algoritmo que lea un número, en caso de ser negativo lo imprima junto con su positivo.
+
+NumN  = int(input(" digite un numero : "))
+
+if NumN < 0:
+    print ("numero negativo: ", NumN)
+    print ("numero positivo: ", -NumN)

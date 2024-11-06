@@ -1,0 +1,10 @@
+#desarrollar un algoritmo que capture un número y diga si es par o impar
+
+numero = int(input("Digite un número: "))
+
+if numero % 2 == 0:
+    print("El número", numero, "es par.")
+elif numero % 2 != 0:
+    print("El número", numero, "es impar.")
+else:
+    print("Entrada no válida.")
