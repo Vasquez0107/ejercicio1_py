@@ -1,4 +1,4 @@
-# 
+#Escriba el algoritmo que al capturar un numero entero convierta gradoscentígrados a kelvin, si captura un numero flotante diga si es mayor a 10.5, y si captura un carácter escriba su nombre.
 
 entrada = input("Ingrese un número (entero o flotante) o un carácter: ")
 
