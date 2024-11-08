@@ -1,18 +1,27 @@
 #Escriba el algoritmo que al capturar un numero entero convierta gradoscentígrados a kelvin, si captura un numero flotante diga si es mayor a 10.5, y si captura un carácter escriba su nombre.
 
-entrada = input("Ingrese un número (entero o flotante) o un carácter: ")
+entrada = input("Introduce un número entero, un número flotante o un carácter: ")
 
+if entrada.lstrip('-').isdigit():
+    numero_entero = int(entrada)
+    kelvin = numero_entero + 273.15
+    print(f"{numero_entero} grados Celsius equivalen a {kelvin} Kelvin.")
 
-if entrada.isdigit() or (entrada[0] == '-' and entrada[1:].isdigit()):
-    num_entero = int(entrada)
-    kelvin = num_entero + 273.15
-    print(f"{num_entero} grados Celsius son {kelvin:.2f} Kelvin.")
-elif entrada.count('.') == 1 and (entrada.replace('.', '').isdigit() or 
-    (entrada[0] == '-' and entrada[1:].replace('.', '').isdigit())):
-    num_flotante = float(entrada)
-    if num_flotante > 10.5:
-        print("El número ingresado es mayor a 10.5.")
+elif '.' in entrada:
+    partes = entrada.split('.')
+    if len(partes) == 2 and partes[0].lstrip('-').isdigit() and partes[1].isdigit():
+        numero_flotante = float(entrada)
+        if numero_flotante > 10.5:
+            print("El número flotante es mayor a 10.5.")
+        else:
+            print("El número flotante no es mayor a 10.5.")
     else:
-        print("El número ingresado no es mayor a 10.5.")
+        print("La entrada no es un número flotante válido.")
+
+elif len(entrada) == 1 and entrada.isalpha():
+    print(f"El carácter ingresado es: {entrada}.")
+    
 else:
-    print("El carácter ingresado es: .", entrada)
+    print("La entrada no es válida. Debes ingresar un número o un carácter.")
+
+

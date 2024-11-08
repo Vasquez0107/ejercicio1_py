@@ -1,0 +1,44 @@
+#desarrollar el algoritmo que evalué la formula cuadrática o general
+import math
+
+def resolver_ecuacion_cuadratica(a, b, c):
+    # Caso cuando 'a' es cero, no es una ecuación cuadrática
+    if a == 0:
+        if b == 0:
+            if c == 0:
+                return "Indeterminada (todos los números son solución)"
+            else:
+                return "No tiene solución"
+        else:
+            # Caso lineal bx + c = 0
+            x = -c / b
+            return f"La solución es x = {x}"
+    
+    # Calcular el discriminante
+    discriminante = b**2 - 4*a*c
+
+    # Evaluar según el discriminante
+    if discriminante > 0:
+        # Dos soluciones reales y distintas
+        raiz_discriminante = math.sqrt(discriminante)
+        x1 = (-b + raiz_discriminante) / (2*a)
+        x2 = (-b - raiz_discriminante) / (2*a)
+        return f"Las soluciones son x1 = {x1} y x2 = {x2}"
+    
+    elif discriminante == 0:
+        # Una solución real doble
+        x = -b / (2*a)
+        return f"La solución doble es x = {x}"
+    
+    else:
+        # No hay soluciones reales (soluciones complejas)
+        parte_real = -b / (2*a)
+        parte_imaginaria = math.sqrt(-discriminante) / (2*a)
+        return f"Las soluciones son complejas: x1 = {parte_real} + {parte_imaginaria}i y x2 = {parte_real} - {parte_imaginaria}i"
+
+# Ejemplo de uso
+a = 1
+b = -3
+c = 2
+resultado = resolver_ecuacion_cuadratica(a, b, c)
+print(resultado)
